@@ -13,3 +13,15 @@ docker system prune -a
 # и следом запустим дженкинс
 docker-compose up --build -d
 docker-compose -f docker-compose-jenkins.yml up -d
+
+#Проверим проект на Голанг
+http://localhost:8080
+
+# проверим дженкинс
+http://localhost:8081
+
+# если неоходимо зай в Дженкинс и не пускает
+#Для разблокировки Jenkins найдите пароль в логах контейнера Jenkins, используя команду:
+#bash
+
+docker-compose -f docker-compose-jenkins.yml 
