@@ -1,0 +1,15 @@
+#сделаеим исполняемым файлом наш скрипт (который сам развернет прокет не надо печатать много и долго)
+chmod +x create_project.sh
+./create_project.sh
+
+#далее возможно возникнут ошибки
+#тогда
+cd my-go-app
+docker-compose down
+docker system prune -a
+
+
+# запустит компос с голангом html
+# и следом запустим дженкинс
+docker-compose up --build -d
+docker-compose -f docker-compose-jenkins.yml up -d
