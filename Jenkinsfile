@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/musikfed/my-go-app.git'
+            }
+        }
+
         stage('Build') {
             steps {
                 script {
@@ -22,9 +28,11 @@ pipeline {
             }
         }
 
-        stage('Archive') {
+        stage('Build Docker Image') {
             steps {
-                archiveArtifacts artifacts: 'my-go-app', allowEmptyArchive: true
+                script {
+                    sh 'docker build -t my-go-app:latest .'
+                }
             }
         }
 
