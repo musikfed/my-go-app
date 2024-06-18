@@ -5,7 +5,7 @@
            stage('Checkout') {
                steps {
                    script {
-                       git url: 'https://github.com/musikfed/my-go-app.git', credentialsId: '<your-credentials-id>'
+                       git url: 'https://github.com/musikfed/my-go-app.git', credentialsId: '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'
                    }
                }
            }
